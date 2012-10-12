@@ -45,7 +45,7 @@ set tw=140
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Warp lines
+"set wrap "Warp lines
 
 """"""""""""""""""""""""""""""""
 " Move around, tabs and windows
@@ -54,6 +54,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""
 " Status line
@@ -122,6 +124,8 @@ map! <S-Insert> <MiddleMouse>
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 "colorscheme solarized
+"
+"
 
 """""""""""""""""""""""""""""""""""""""'
 " ctags related
@@ -129,6 +133,7 @@ map! <S-Insert> <MiddleMouse>
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/cuda
+
 
 """"""""""""""""""""""""""""""""
 " omni auto complete
@@ -146,3 +151,15 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+
+""""""""""""""""""""""""""""""""""'
+" Backup, files and undo
+"""""""""""""""""""""""""""""""""""
+set backup
+set backupdir=~/.vim/temp/backup/
+set directory=~/.vim/temp/backup/
+set writebackup
+set swapfile
+set wb
+set undolevels=1000
+
