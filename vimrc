@@ -29,7 +29,6 @@ set hlsearch
 set showmatch
 
 
-
 """""""""""""""""""""""""""""""""
 " Indent related
 """""""""""""""""""""""""""""""""
