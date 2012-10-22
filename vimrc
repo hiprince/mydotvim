@@ -98,26 +98,26 @@ call vundle#rc()
  " required! 
 Bundle 'gmarik/vundle'
 
-Bundle "delimitMate.vim"
-Bundle "Solarized"
-Bundle "Syntastic"
-Bundle "The-NERD-Commenter"
-Bundle "SuperTab-continued."
-Bundle "pyflakes.vim"
-Bundle "Scons-compiler-plugin"
-Bundle "Tagbar"
+Bundle 'delimitMate.vim'
+Bundle 'Solarized'
+Bundle 'Syntastic'
+Bundle 'The-NERD-Commenter'
+Bundle 'SuperTab-continued.'
+Bundle 'pyflakes.vim'
+Bundle 'Scons-compiler-plugin'
+Bundle 'Tagbar'
 let g:tagbar_usearrows=1
 nnoremap <leader>l :TagbarToggle<CR>
 
-Bundle "fugitive.vim"
-Bundle "cpp.vim"
-Bundle "c.vim"
-Bundle "OmniCppComplete"
-Bundle "SearchComplete"
-Bundle "snippets.vim"
-Bundle "EasyMotion"
-Bundle "pydoc.vim"
-Bundle "pythoncomplete"
+Bundle 'fugitive.vim'
+Bundle 'cpp.vim'
+Bundle 'c.vim'
+Bundle 'OmniCppComplete'
+Bundle 'SearchComplete'
+Bundle 'snippets.vim'
+Bundle 'EasyMotion'
+Bundle 'pydoc.vim'
+Bundle 'pythoncomplete'
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
