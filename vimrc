@@ -2,18 +2,40 @@ set nocompatible
 filetype off
 
 " Enable filetype plugins
+filetype plugin on
 filetype plugin indent on
 filetype indent on
 
-" Set to auto read when a file is changed from the outside
-set autoread
+
+""""""""""""""""""""""""""""""""
+" Custom key mapping           "
+""""""""""""""""""""""""""""""""
+" set fast save
+" nmap <leader>e :w!<cr>
 
 " remap <leader> to ','
 let mapleader=","
 let g:mapleader=","
 
-" set fast save
-nmap <leader>w :w!<cr>
+"""""""""""""""""""""""""""""""""""
+" Indent and common issue related "
+"""""""""""""""""""""""""""""""""""
+set expandtab
+
+set smarttab
+
+set shiftwidth=4
+set tabstop=4
+
+set lbr
+set tw=140
+
+set ai "Auto indent
+set si "Smart indent
+set wrap! "Warp lines off
+
+" Set to auto read when a file is changed from the outside
+set autoread
 
 " always show current position
 set ruler
@@ -28,23 +50,8 @@ set hlsearch
 " Show matching brackets when test indicator is over them
 set showmatch
 
-
-"""""""""""""""""""""""""""""""""
-" Indent related
-"""""""""""""""""""""""""""""""""
-set expandtab
-
-set smarttab
-
-set shiftwidth=4
-set tabstop=4
-
-set lbr
-set tw=140
-
-set ai "Auto indent
-set si "Smart indent
-"set wrap "Warp lines
+" syntax checking
+" set syntax=1
 
 """"""""""""""""""""""""""""""""
 " Move around, tabs and windows
@@ -98,14 +105,19 @@ Bundle "The-NERD-Commenter"
 Bundle "SuperTab-continued."
 Bundle "pyflakes.vim"
 Bundle "Scons-compiler-plugin"
-
 Bundle "Tagbar"
 let g:tagbar_usearrows=1
 nnoremap <leader>l :TagbarToggle<CR>
 
 Bundle "fugitive.vim"
 Bundle "cpp.vim"
+Bundle "c.vim"
 Bundle "OmniCppComplete"
+Bundle "SearchComplete"
+Bundle "snippets.vim"
+Bundle "EasyMotion"
+Bundle "pydoc.vim"
+Bundle "pythoncomplete"
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -145,11 +157,13 @@ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead,BufEnter *.c,*.h set omnifunc=omni#c#complete#Main
+au FileType python set omnifunc=pythoncomplete#Complete
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 """"""""""""""""""""""""""""""""""'
 " Backup, files and undo
@@ -162,3 +176,8 @@ set swapfile
 set wb
 set undolevels=1000
 
+
+"""""""""""""""""""""""""""""""
+" Python specification        "
+"""""""""""""""""""""""""""""""
+map <buffer> <C-F5> :w<CR>:!/usr/bin/env python % <CR>
