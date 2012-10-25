@@ -11,11 +11,14 @@ filetype indent on
 " Custom key mapping           "
 """"""""""""""""""""""""""""""""
 " set fast save
-" nmap <leader>e :w!<cr>
+nmap <leader>ww :w!<cr>
+nmap <leader>wa :wa!<cr>
 
 " remap <leader> to ','
 let mapleader=","
 let g:mapleader=","
+
+nmap <leader>wr :set wrap!<cr>
 
 """""""""""""""""""""""""""""""""""
 " Indent and common issue related "
@@ -32,7 +35,7 @@ set tw=140
 
 set ai "Auto indent
 set si "Smart indent
-set wrap! "Warp lines off
+set nowrap "Warp lines off
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -102,6 +105,9 @@ Bundle 'delimitMate.vim'
 Bundle 'Solarized'
 Bundle 'Syntastic'
 Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
+nmap <leader>e :NERDTreeToggle<CR>
+
 Bundle 'SuperTab-continued.'
 Bundle 'pyflakes.vim'
 Bundle 'Scons-compiler-plugin'
@@ -118,6 +124,8 @@ Bundle 'snippets.vim'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
 Bundle 'pythoncomplete'
+Bundle 'surround.vim'
+Bundle 'cscope.vim'
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -149,6 +157,8 @@ set tags+=~/.vim/tags/cuda
 """"""""""""""""""""""""""""""""
 " omni auto complete
 """"""""""""""""""""""""""""""""
+filetype plugin on
+set ofu=syntaxcomplete#Complete
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
@@ -162,7 +172,8 @@ au BufNewFile,BufRead,BufEnter *.c,*.h set omnifunc=omni#c#complete#Main
 au FileType python set omnifunc=pythoncomplete#Complete
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+let g:SuperTabDefaultCompletionType="context"
+set completeopt=menuone,longest,preview
 
 
 """"""""""""""""""""""""""""""""""'
@@ -181,3 +192,7 @@ set undolevels=1000
 " Python specification        "
 """""""""""""""""""""""""""""""
 map <buffer> <C-F5> :w<CR>:!/usr/bin/env python % <CR>
+set foldmethod=indent
+set foldlevel=99
+
+let g:pyflakes_use_quickfix=0
