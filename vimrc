@@ -29,6 +29,7 @@ set smarttab
 
 set shiftwidth=4
 set tabstop=4
+set sts=4
 
 set lbr
 set tw=140
@@ -119,13 +120,31 @@ Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
 Bundle 'OmniCppComplete'
-Bundle 'SearchComplete'
-Bundle 'snippets.vim'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
 Bundle 'pythoncomplete'
 Bundle 'surround.vim'
+let b:surround_{char2nr("v")} = "{{ \r }}"
+let b:surround_{char2nr("{")} = "{{ \r }}"
+let b:surround_{char2nr("%")} = "{% \r %}"
+let b:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
+let b:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
+let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
+let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
+let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
+Bundle 'snippetsEmu'
+Bundle 'django.vim'
+Bundle 'vim-htmldjango_omnicomplete'
+Bundle 'neocomplcache'
+let g:acp_enableAtStartup=0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_camel_case_complete=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:SuperTabDefaultCompletionType='<C-X><C-U>'
+let g:NeoCompleteCache_DisableAutoComplete=1
+
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -153,7 +172,6 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/cuda
 
-
 """"""""""""""""""""""""""""""""
 " omni auto complete
 """"""""""""""""""""""""""""""""
@@ -169,10 +187,15 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 au BufNewFile,BufRead,BufEnter *.c,*.h set omnifunc=omni#c#complete#Main
+au BufNewFile,BufRead,BufEnter *.py set omnifunc=pythoncomplete#Complete
 au FileType python set omnifunc=pythoncomplete#Complete
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType css set omnifunc=csscomplete#CompleteCSS
+
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-let g:SuperTabDefaultCompletionType="context"
+"let g:SuperTabDefaultCompletionType="context"
 set completeopt=menuone,longest,preview
 
 
