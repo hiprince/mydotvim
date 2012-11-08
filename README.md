@@ -10,7 +10,7 @@ Usage
 1. Clone repo
 
 ```
-git clone git://github.com/hiprince/mydotvim.git ~/.vim/
+git clone https://github.com/hiprince/mydotvim.git ~/.vim/
 ```
 
 2. Make soft link
