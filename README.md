@@ -32,38 +32,48 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 Bundle installed
 ============================
-`gmarik/vundle`
+`Bundle 'gmarik/vundle'`
 
-`delimitMate.vim`
+`Bundle 'delimitMate.vim'`
 
-`Solarized`
+`Bundle 'Solarized'`
 
-`Syntastic`
+`Bundle 'Syntastic'`
 
-`The-NERD-Commenter`
+`Bundle 'The-NERD-Commenter'`
 
-`SuperTab-continued.`
+`Bundle 'The-NERD-tree'`
 
-`pyflakes.vim`
+`Bundle 'SuperTab-continued.'`
 
-`Scons-compiler-plugin`
+`Bundle 'pyflakes.vim'`
 
-`Tagbar`
+`Bundle 'Scons-compiler-plugin'`
 
-`fugitive.vim`
+`Bundle 'Tagbar'`
 
-`cpp.vim`
+`Bundle 'fugitive.vim'`
 
-`c.vim`
+`Bundle 'cpp.vim'`
 
-`OmniCppComplete`
+`Bundle 'c.vim'`
 
-`SearchComplete`
+`Bundle 'OmniCppComplete'`
 
-`snippets.vim`
+`Bundle 'EasyMotion'`
 
-`EasyMotion`
+`Bundle 'pydoc.vim'`
 
-`pydoc.vim`
+`Bundle 'pythoncomplete'`
 
-`pythoncomplete`
+`Bundle 'surround.vim'`
+
+`Bundle 'cscope.vim'`
+
+`Bundle 'snippetsEmu'`
+
+`Bundle 'django.vim'`
+
+`Bundle 'vim-htmldjango_omnicomplete'`
+
+`Bundle 'neocomplcache'`
