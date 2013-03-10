@@ -114,7 +114,7 @@ Bundle 'pyflakes.vim'
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
-nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
@@ -144,6 +144,9 @@ let g:neocomplcache_enable_camel_case_complete=1
 let g:neocomplcache_enable_underbar_completion=1
 let g:SuperTabDefaultCompletionType='<C-X><C-U>'
 let g:NeoCompleteCache_DisableAutoComplete=1
+
+Bundle 'HTML-AutoCloseTag'
+Bundle 'HTML5-Syntax-File'
 
 
 """""""""""""""""""""""""""""""""""""""
