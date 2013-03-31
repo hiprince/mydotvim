@@ -114,7 +114,7 @@ Bundle 'pyflakes.vim'
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
-nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 
 Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
@@ -145,6 +145,8 @@ let g:neocomplcache_enable_underbar_completion=1
 let g:SuperTabDefaultCompletionType='<C-X><C-U>'
 let g:NeoCompleteCache_DisableAutoComplete=1
 
+Bundle 'HTML-AutoCloseTag'
+Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
 Bundle 'closetag.vim'
 
@@ -190,6 +192,8 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 au BufNewFile,BufRead,BufEnter *.c,*.h set omnifunc=omni#c#complete#Main
 au BufNewFile,BufRead,BufEnter *.py set omnifunc=pythoncomplete#Complete
+au BufNewFile,BufRead,BufEnter *.cu set filetype=cu
+au BufNewFile,BufRead,BufEnter *.cuh set filetype=cu
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
