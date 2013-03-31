@@ -145,6 +145,8 @@ let g:neocomplcache_enable_underbar_completion=1
 let g:SuperTabDefaultCompletionType='<C-X><C-U>'
 let g:NeoCompleteCache_DisableAutoComplete=1
 
+Bundle 'dbext.vim'
+Bundle 'closetag.vim'
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
