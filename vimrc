@@ -109,7 +109,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 nmap <leader>e :NERDTreeToggle<CR>
 
-" Bundle 'SuperTab-continued.'
+Bundle 'SuperTab-continued.'
 Bundle 'pyflakes.vim'
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
@@ -134,22 +134,22 @@ let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
 Bundle 'snippetsEmu'
-" Bundle 'neocomplcache'
-"let g:acp_enableAtStartup=0
-"let g:neocomplcache_enable_at_startup=1
-"let g:neocomplcache_enable_smart_case=1
-"let g:neocomplcache_enable_camel_case_complete=1
-"let g:neocomplcache_enable_underbar_completion=1
-"let g:SuperTabDefaultCompletionType='<C-X><C-U>'
-"let g:NeoCompleteCache_DisableAutoComplete=1
+Bundle 'neocomplcache'
+let g:acp_enableAtStartup=0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_camel_case_complete=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:SuperTabDefaultCompletionType='<C-X><C-U>'
+let g:NeoCompleteCache_DisableAutoComplete=1
 
 Bundle 'HTML-AutoCloseTag'
 Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
 Bundle 'closetag.vim'
 " YouCompleteMe"
-Bundle 'git://github.com/Valloric/YouCompleteMe.git'
-let g:ycm_min_num_of_chars_for_completion = 2
+" Bundle 'git://github.com/Valloric/YouCompleteMe.git'
+" let g:ycm_min_num_of_chars_for_completion = 2
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
