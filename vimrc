@@ -44,6 +44,7 @@ set autoread
 " always show current position
 set ruler
 set cursorline
+set cursorcolumn
 
 " show line number
 set number
@@ -111,6 +112,15 @@ Bundle 'The-NERD-tree'
 nmap <leader>e :NERDTreeToggle<CR>
 
 Bundle 'pyflakes.vim'
+" fix red background problem when python syntax error
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline 
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
@@ -119,7 +129,7 @@ nnoremap <leader>t :TagbarToggle<CR>
 Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
-Bundle 'OmniCppComplete'
+"Bundle 'OmniCppComplete'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
 Bundle 'surround.vim'
@@ -166,6 +176,14 @@ map! <S-Insert> <MiddleMouse>
 "colorscheme solarized
 "
 "
+
+hi CursorLine   cterm=NONE ctermbg=252 ctermfg=NONE guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
+autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=Red
+autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=NONE
+autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
+autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """""""""""""""""""""""""""""""""""""""'
 " ctags related
