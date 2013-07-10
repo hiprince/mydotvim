@@ -56,6 +56,7 @@ set showmatch
 
 " syntax checking
 " set syntax=1
+syntax on
 
 """"""""""""""""""""""""""""""""
 " Move around, tabs and windows
@@ -109,7 +110,6 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 nmap <leader>e :NERDTreeToggle<CR>
 
-" Bundle 'SuperTab-continued.'
 Bundle 'pyflakes.vim'
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
@@ -122,7 +122,6 @@ Bundle 'c.vim'
 Bundle 'OmniCppComplete'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
-Bundle 'pythoncomplete'
 Bundle 'surround.vim'
 let b:surround_{char2nr("v")} = "{{ \r }}"
 let b:surround_{char2nr("{")} = "{{ \r }}"
@@ -133,23 +132,21 @@ let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
 let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
-Bundle 'snippetsEmu'
-" Bundle 'neocomplcache'
-"let g:acp_enableAtStartup=0
-"let g:neocomplcache_enable_at_startup=1
-"let g:neocomplcache_enable_smart_case=1
-"let g:neocomplcache_enable_camel_case_complete=1
-"let g:neocomplcache_enable_underbar_completion=1
-"let g:SuperTabDefaultCompletionType='<C-X><C-U>'
-"let g:NeoCompleteCache_DisableAutoComplete=1
-
-Bundle 'HTML-AutoCloseTag'
-Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
-Bundle 'closetag.vim'
+Bundle "AutoClose"
 " YouCompleteMe"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+" ZenCoding
+Bundle 'ZenCoding.vim'
+
+" ShowTrailingWhitespace
+Bundle 'ShowTrailingWhitespace'
+
+" SuperTab-Continued
+Bundle 'SuperTab-continued.'
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -226,3 +223,10 @@ set foldmethod=indent
 set foldlevel=99
 
 let g:pyflakes_use_quickfix=0
+
+
+"""""""""""""""""""""""""""""""
+" Fix mysterious bugs         "
+"""""""""""""""""""""""""""""""
+"set backspace=2 " make backspace work like most other apps
+set backspace=indent,eol,start " fix backspace not working in insert mode bug
