@@ -1,4 +1,4 @@
-set nocompatible
+    set nocompatible
 filetype off
 
 " Enable filetype plugins
@@ -20,6 +20,9 @@ let g:mapleader=","
 
 nmap <leader>wr :set wrap!<cr>
 
+" change windows size
+nmap <leader>>> :20winc ><cr>
+nmap <leader><< :20winc <<cr>
 """""""""""""""""""""""""""""""""""
 " Indent and common issue related "
 """""""""""""""""""""""""""""""""""
@@ -32,7 +35,8 @@ set tabstop=4
 set sts=4
 
 set lbr
-set tw=140
+" disable maximum text width
+set tw=0
 
 set ai "Auto indent
 set si "Smart indent
@@ -87,6 +91,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""
 " Spell checking
 """"""""""""""""""""""""""""""""""""""
+set spell
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
@@ -147,6 +152,7 @@ Bundle "AutoClose"
 " YouCompleteMe"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
 " ZenCoding
@@ -177,10 +183,10 @@ map! <S-Insert> <MiddleMouse>
 "
 "
 
-hi CursorLine   cterm=NONE ctermbg=252 ctermfg=NONE guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
-autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=Red
-autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=NONE
+autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=None
+autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
 autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
 autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
@@ -191,7 +197,8 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/cuda
-set tags+=~/.vim/temp/ctags/tags
+"set tags+=tags
+"set tags+=~/ficus/tags
 
 """"""""""""""""""""""""""""""""
 " omni auto complete
