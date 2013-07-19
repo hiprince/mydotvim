@@ -152,8 +152,11 @@ Bundle "AutoClose"
 " YouCompleteMe"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
-"let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" the following line may cause severe memory leak
+" let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/ouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nmap <leader><leader>d :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " ZenCoding
 Bundle 'ZenCoding.vim'
