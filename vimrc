@@ -137,7 +137,6 @@ nnoremap <leader>t :TagbarToggle<CR>
 Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
-"Bundle 'OmniCppComplete'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
 Bundle 'surround.vim'

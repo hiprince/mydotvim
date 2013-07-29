@@ -49,7 +49,6 @@ Bundle installed
 `Bundle 'fugitive.vim'
 `Bundle 'cpp.vim'
 `Bundle 'c.vim'
-`Bundle 'OmniCppComplete'
 `Bundle 'EasyMotion'
 `Bundle 'pydoc.vim'
 `Bundle 'surround.vim'
@@ -60,3 +59,4 @@ Bundle installed
 `Bundle 'ZenCoding.vim'
 `Bundle 'ShowTrailingWhitespace'
 `Bundle 'SuperTab-continued.'
+`Bundle 'DrawIt'
