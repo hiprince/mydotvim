@@ -149,7 +149,6 @@ let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
 let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
-<<<<<<< HEAD
 Bundle 'snippetsEmu'
 Bundle 'neocomplcache'
 let g:acp_enableAtStartup=0
