@@ -20,6 +20,9 @@ let g:mapleader=","
 
 nmap <leader>wr :set wrap!<cr>
 
+" change windows size
+nmap <leader>>> :20winc ><cr>
+nmap <leader><< :20winc <<cr>
 """""""""""""""""""""""""""""""""""
 " Indent and common issue related "
 """""""""""""""""""""""""""""""""""
@@ -32,7 +35,8 @@ set tabstop=4
 set sts=4
 
 set lbr
-set tw=140
+" disable maximum text width
+set tw=0
 
 set ai "Auto indent
 set si "Smart indent
@@ -44,6 +48,7 @@ set autoread
 " always show current position
 set ruler
 set cursorline
+set cursorcolumn
 
 " show line number
 set number
@@ -56,7 +61,11 @@ set showmatch
 
 " syntax checking
 " set syntax=1
+syntax on
 
+" set encoding
+set termencoding=utf8
+set fileencodings=utf-8,gbk,ucs-bom,cp936
 """"""""""""""""""""""""""""""""
 " Move around, tabs and windows
 """"""""""""""""""""""""""""""""
@@ -85,6 +94,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""
 " Spell checking
 """"""""""""""""""""""""""""""""""""""
+set spell
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
@@ -109,8 +119,16 @@ Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 nmap <leader>e :NERDTreeToggle<CR>
 
-Bundle 'SuperTab-continued.'
 Bundle 'pyflakes.vim'
+" fix red background problem when python syntax error
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline 
 Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
@@ -119,10 +137,8 @@ nnoremap <leader>t :TagbarToggle<CR>
 Bundle 'fugitive.vim'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
-Bundle 'OmniCppComplete'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
-Bundle 'pythoncomplete'
 Bundle 'surround.vim'
 let b:surround_{char2nr("v")} = "{{ \r }}"
 let b:surround_{char2nr("{")} = "{{ \r }}"
@@ -133,6 +149,7 @@ let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
 let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
+<<<<<<< HEAD
 Bundle 'snippetsEmu'
 Bundle 'neocomplcache'
 let g:acp_enableAtStartup=0
@@ -146,10 +163,26 @@ let g:NeoCompleteCache_DisableAutoComplete=1
 Bundle 'HTML-AutoCloseTag'
 Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
-Bundle 'closetag.vim'
-" YouCompleteMe"
-" Bundle 'git://github.com/Valloric/YouCompleteMe.git'
-" let g:ycm_min_num_of_chars_for_completion = 2
+Bundle "AutoClose"
+Bundle 'git://github.com/Valloric/YouCompleteMe.git'
+let g:ycm_min_num_of_chars_for_completion = 2
+" the following line may cause severe memory leak
+" let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nmap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" ZenCoding
+Bundle 'ZenCoding.vim'
+
+" ShowTrailingWhitespace
+Bundle 'ShowTrailingWhitespace'
+
+" SuperTab-Continued
+Bundle 'SuperTab-continued.'
+
+" Draw Table in Vim
+Bundle "DrawIt"
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -170,12 +203,22 @@ map! <S-Insert> <MiddleMouse>
 "
 "
 
+hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
+autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=None
+autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
+autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
+autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
 """""""""""""""""""""""""""""""""""""""'
 " ctags related
 """""""""""""""""""""""""""""""""""""""
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/cuda
+"set tags+=tags
+"set tags+=~/ficus/tags
 
 """"""""""""""""""""""""""""""""
 " omni auto complete
@@ -199,6 +242,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.json,*.conf set ft=javascript
 
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -226,3 +270,10 @@ set foldmethod=indent
 set foldlevel=99
 
 let g:pyflakes_use_quickfix=0
+
+
+"""""""""""""""""""""""""""""""
+" Fix mysterious bugs         "
+"""""""""""""""""""""""""""""""
+"set backspace=2 " make backspace work like most other apps
+set backspace=indent,eol,start " fix backspace not working in insert mode bug
