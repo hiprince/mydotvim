@@ -37,9 +37,9 @@ bash ~/.vim/bundle/YouCompleteMe/install.sh
 
 Bundle installed
 ============================
-`Bundle 'gmarik/vundle'
+`Bundle 'gmarik/vundle'`
 
-`Bundle 'delimitMate.vim'
+`Bundle 'delimitMate.vim'`
 
 `Bundle 'Solarized'
 
