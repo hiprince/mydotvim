@@ -1,4 +1,4 @@
-    set nocompatible
+set nocompatible
 filetype off
 
 " Enable filetype plugins
@@ -63,6 +63,9 @@ set showmatch
 " set syntax=1
 syntax on
 
+" set encoding
+set termencoding=utf8
+set fileencodings=utf-8,gbk,ucs-bom,cp936
 """"""""""""""""""""""""""""""""
 " Move around, tabs and windows
 """"""""""""""""""""""""""""""""
@@ -155,8 +158,8 @@ let g:ycm_min_num_of_chars_for_completion = 2
 " the following line may cause severe memory leak
 " let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/ouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-nmap <leader><leader>d :YcmCompleter GoToDefinitionElseDeclaration<cr>
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nmap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " ZenCoding
 Bundle 'ZenCoding.vim'
@@ -166,6 +169,9 @@ Bundle 'ShowTrailingWhitespace'
 
 " SuperTab-Continued
 Bundle 'SuperTab-continued.'
+
+" Draw Table in Vim
+Bundle "DrawIt"
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -225,6 +231,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.json,*.conf set ft=javascript
 
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
