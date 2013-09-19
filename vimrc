@@ -261,7 +261,10 @@ set directory=~/.vim/temp/backup/
 set writebackup
 set swapfile
 set wb
-set undolevels=1000
+set undofile                " Save undo's after file closes
+set undodir=~/.vim/temp/undo/ " where to save undo histories
+set undolevels=10000        " How many undos
+set undoreload=10000        " number of lines to save for undo
 
 
 """""""""""""""""""""""""""""""

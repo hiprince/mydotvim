@@ -10,3 +10,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 # 5. Install YouComleteMe
 bash ~/.vim/bundle/YouCompleteMe/install.sh
+mkdir -p ~/.vim/temp
+mkdir -p ~/.vim/temp/undo
+mkdir -p ~/.vim/temp/backup
+mkdir -p ~/.vim/temp/ctags
