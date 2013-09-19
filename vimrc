@@ -56,6 +56,9 @@ set number
 " Highlight search result
 set hlsearch
 
+" set realtime search
+set incsearch
+
 " Show matching brackets when test indicator is over them
 set showmatch
 
@@ -202,10 +205,10 @@ map! <S-Insert> <MiddleMouse>
 "
 "
 
-hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
+"hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
 hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
-autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=None
-autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
+"autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=None
+"autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
 autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
 autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
