@@ -97,7 +97,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""
 " Spell checking
 """"""""""""""""""""""""""""""""""""""
-set spell
+"set spell
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
@@ -153,19 +153,20 @@ let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
 Bundle 'snippetsEmu'
-Bundle 'neocomplcache'
+"Bundle 'neocomplcache'
 let g:acp_enableAtStartup=0
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_camel_case_complete=1
-let g:neocomplcache_enable_underbar_completion=1
+"let g:neocomplcache_enable_at_startup=1
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_enable_camel_case_complete=1
+"let g:neocomplcache_enable_underbar_completion=1
+"let g:NeoCompleteCache_DisableAutoComplete=1
+
 let g:SuperTabDefaultCompletionType='<C-X><C-U>'
-let g:NeoCompleteCache_DisableAutoComplete=1
 
 Bundle 'HTML-AutoCloseTag'
 Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
-Bundle "AutoClose"
+"Bundle "AutoClose"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
 " the following line may cause severe memory leak
