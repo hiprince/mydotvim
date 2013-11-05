@@ -85,6 +85,16 @@ set mouse=a
 
 set laststatus=2
 
+" use vim-airline
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#branch#empty_message=''
+let g:airline#extensions#syntastic#enabled=1
+let g:airline_powerline_fonts=1
+let g:airline_enable_branch=1
+let g:airline_enable_syntastic=1
+let g:airline_detect_paste=1
+let g:airline_theme='solarized'
+
 "set statusline=[%l,%v\ %P%M][CWD:\ %{getcwd()}][FILE:\ %f]\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 "function! CWD()
@@ -185,6 +195,9 @@ let g:BASH_AuthorName   = 'Phoenix Hao'
 let g:BASH_Email        = 'phoenix.hao1@gmail.com'
 let g:BASH_Company      = '~~'
 
+" vim-airline
+Bundle "bling/vim-airline"
+
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
 """""""""""""""""""""""""""""""""""""""
@@ -195,22 +208,21 @@ map! <S-Insert> <MiddleMouse>
 """"""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""
-"set background=light
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
-colorscheme elflord
-"
-"
+set t_Co=256
+colorscheme solarized
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+"colorscheme elflord
 
 "hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
+"hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
 "autocmd InsertEnter * highlight CursorLine ctermbg=252 ctermfg=None
 "autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
-autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
-autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
+"autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
+"autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 """""""""""""""""""""""""""""""""""""""'

@@ -16,3 +16,10 @@ mkdir -p ~/.vim/temp
 mkdir -p ~/.vim/temp/undo
 mkdir -p ~/.vim/temp/backup
 mkdir -p ~/.vim/temp/ctags
+
+
+# 7. deal with vim-airline font issue
+cp -r ~/.vim/res/airline/powerline-fonts/ ~/.fonts/
+fc-cache -vf ~/.fonts
+cp ~/.vim/res/airline/10-powerline-symbols.conf ~/.fontconfig/
+echo 'Please restart your X Server to take effect'
