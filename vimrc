@@ -89,6 +89,7 @@ set laststatus=2
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#branch#empty_message=''
 let g:airline#extensions#syntastic#enabled=1
+let g:airline_enable_hunks = 0
 let g:airline_powerline_fonts=1
 let g:airline_enable_branch=1
 let g:airline_enable_syntastic=1
@@ -122,7 +123,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " let Vundle manage Vundle
- " required! 
+ " required!
 Bundle 'gmarik/vundle'
 
 Bundle 'delimitMate.vim'
@@ -142,13 +143,13 @@ highlight SpellCap term=underline cterm=underline
 highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
-highlight SpellLocal term=underline cterm=underline 
+highlight SpellLocal term=underline cterm=underline
 "Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
 nnoremap <leader>t :TagbarToggle<CR>
 
-Bundle 'fugitive.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
 Bundle 'EasyMotion'
@@ -198,6 +199,7 @@ let g:BASH_Company      = '~~'
 " vim-airline
 Bundle "bling/vim-airline"
 
+Bundle 'https://github.com/flazz/vim-colorschemes.git'
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
 """""""""""""""""""""""""""""""""""""""
@@ -209,13 +211,14 @@ map! <S-Insert> <MiddleMouse>
 " Colorscheme
 """"""""""""""""""""""""""""""
 set t_Co=256
-colorscheme solarized
-set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+colorscheme molokai
 "colorscheme elflord
+"colorscheme solarized
+"set background=dark
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 
 "hi CursorLine   cterm=NONE ctermbg=252 ctermfg=Red guibg=darkred guifg=white
 "hi CursorColumn cterm=NONE ctermbg=252 ctermfg=white guibg=darkred guifg=white
