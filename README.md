@@ -49,9 +49,9 @@ Bundle installed
 
 `Bundle 'The-NERD-tree'`
 
-`Bundle 'pyflakes.vim'`
+`Bundle 'ctrlp.vim'`
 
-`Bundle 'Scons-compiler-plugin'`
+`Bundle 'pyflakes.vim'`
 
 `Bundle 'Tagbar'`
 
@@ -69,6 +69,10 @@ Bundle installed
 
 `Bundle 'cscope.vim'`
 
+`Bundle 'HTML-AutoCloseTag'`
+
+`Bundle 'HTML5-Syntax-File'`
+
 `Bundle 'dbext.vim'`
 
 `Bundle "AutoClose"`
@@ -79,6 +83,6 @@ Bundle installed
 
 `Bundle 'ShowTrailingWhitespace'`
 
-`Bundle 'SuperTab-continued.'`
-
 `Bundle 'DrawIt'`
+
+`Bundle 'bash-support.vim'`

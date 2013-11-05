@@ -9,7 +9,9 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 # 4. Install all bundles in vim
 vim +BundleInstall +qall
 # 5. Install YouComleteMe
-bash ~/.vim/bundle/YouCompleteMe/install.sh
+bash ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+
+# 6. make temporary directories
 mkdir -p ~/.vim/temp
 mkdir -p ~/.vim/temp/undo
 mkdir -p ~/.vim/temp/backup

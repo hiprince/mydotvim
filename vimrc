@@ -85,12 +85,12 @@ set mouse=a
 
 set laststatus=2
 
-set statusline=[%l,%v\ %P%M][CWD:\ %{getcwd()}][FILE:\ %f]\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
+"set statusline=[%l,%v\ %P%M][CWD:\ %{getcwd()}][FILE:\ %f]\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
 
-function! CWD()
-let curdir = substitute(getcwd(), '/home/mnazim', "~/", "g")
-    return curdir
-endfunction
+"function! CWD()
+"let curdir = substitute(getcwd(), '/home/mnazim', "~/", "g")
+    "return curdir
+"endfunction
 "set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
@@ -121,6 +121,7 @@ Bundle 'Syntastic'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 nmap <leader>e :NERDTreeToggle<CR>
+Bundle 'ctrlp.vim'
 
 Bundle 'pyflakes.vim'
 " fix red background problem when python syntax error
@@ -132,7 +133,7 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline 
-Bundle 'Scons-compiler-plugin'
+"Bundle 'Scons-compiler-plugin'
 Bundle 'Tagbar'
 let g:tagbar_usearrows=1
 nnoremap <leader>t :TagbarToggle<CR>
@@ -152,21 +153,12 @@ let b:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
 let b:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
 let b:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
 Bundle 'cscope.vim'
-Bundle 'snippetsEmu'
-"Bundle 'neocomplcache'
-let g:acp_enableAtStartup=0
-"let g:neocomplcache_enable_at_startup=1
-"let g:neocomplcache_enable_smart_case=1
-"let g:neocomplcache_enable_camel_case_complete=1
-"let g:neocomplcache_enable_underbar_completion=1
-"let g:NeoCompleteCache_DisableAutoComplete=1
-
-let g:SuperTabDefaultCompletionType='<C-X><C-U>'
+"Bundle 'snippetsEmu'
 
 Bundle 'HTML-AutoCloseTag'
 Bundle 'HTML5-Syntax-File'
 Bundle 'dbext.vim'
-"Bundle "AutoClose"
+Bundle "AutoClose"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
 " the following line may cause severe memory leak
@@ -182,10 +174,16 @@ Bundle 'ZenCoding.vim'
 Bundle 'ShowTrailingWhitespace'
 
 " SuperTab-Continued
-Bundle 'SuperTab-continued.'
+"Bundle 'SuperTab-continued.'
+"let g:SuperTabDefaultCompletionType='<C-X><C-U>'
 
 " Draw Table in Vim
 Bundle "DrawIt"
+
+Bundle "bash-support.vim"
+let g:BASH_AuthorName   = 'Phoenix Hao'
+let g:BASH_Email        = 'phoenix.hao1@gmail.com'
+let g:BASH_Company      = '~~'
 
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
@@ -203,6 +201,7 @@ map! <S-Insert> <MiddleMouse>
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 "colorscheme solarized
+colorscheme elflord
 "
 "
 
@@ -220,8 +219,6 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/cuda
-"set tags+=tags
-"set tags+=~/ficus/tags
 
 """"""""""""""""""""""""""""""""
 " omni auto complete
