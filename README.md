@@ -30,9 +30,9 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 :BundleInstall!(or `vim +BundleInstall +qall`)
 ```
 
-5. Install YouComleteMe(Require Vim 7.3.584+)
+5. Install YouComleteMe(Require Vim 7.3.584+, compiled with --enable-pythoninterp, need to install python-dev on Ubuntu)
 ```
-bash ~/.vim/bundle/YouCompleteMe/install.sh
+bash ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
 ```
 
 Bundle installed
