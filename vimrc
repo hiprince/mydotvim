@@ -89,12 +89,16 @@ set laststatus=2
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#branch#empty_message=''
 let g:airline#extensions#syntastic#enabled=1
-let g:airline_enable_hunks = 0
 let g:airline_powerline_fonts=1
 let g:airline_enable_branch=1
 let g:airline_enable_syntastic=1
 let g:airline_detect_paste=1
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
 
 "set statusline=[%l,%v\ %P%M][CWD:\ %{getcwd()}][FILE:\ %f]\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*
 
@@ -173,10 +177,11 @@ Bundle "AutoClose"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
 " the following line may cause severe memory leak
-" let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 nmap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <leader>yd :YcmDiags<CR>
 
 " ZenCoding
 Bundle 'ZenCoding.vim'
@@ -199,7 +204,20 @@ let g:BASH_Company      = '~~'
 " vim-airline
 Bundle "bling/vim-airline"
 
+" colorschema
 Bundle 'https://github.com/flazz/vim-colorschemes.git'
+
+" awesome parentheses matching
+Bundle 'rainbow_parentheses.vim'
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" conque shell simulator
+Bundle 'Conque-Shell'
+
+Bundle 'Glench/Vim-Jinja2-Syntax'
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
 """""""""""""""""""""""""""""""""""""""
@@ -214,7 +232,7 @@ set t_Co=256
 colorscheme molokai
 "colorscheme elflord
 "colorscheme solarized
-"set background=dark
+"set background=light
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
@@ -226,7 +244,7 @@ colorscheme molokai
 "autocmd InsertLeave * highlight CursorLine ctermbg=252 ctermfg=Red
 "autocmd InsertEnter * highlight CursorColumn ctermbg=252 ctermfg=NONE
 "autocmd InsertLeave * highlight CursorColumn ctermbg=252 ctermfg=White
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+nnoremap <leader>c :set cursorline! cursorcolumn!<CR>
 
 """""""""""""""""""""""""""""""""""""""'
 " ctags related
@@ -295,3 +313,10 @@ let g:pyflakes_use_quickfix=0
 """""""""""""""""""""""""""""""
 "set backspace=2 " make backspace work like most other apps
 set backspace=indent,eol,start " fix backspace not working in insert mode bug
+
+
+""""""""""""""""""""""""""""""
+" scons                      "
+""""""""""""""""""""""""""""""
+nnoremap <leader>b :!scons -u -j8<CR>
+nnoremap <leader><leader>c :!scons -u -c<CR>
