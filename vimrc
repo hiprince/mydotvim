@@ -307,6 +307,13 @@ set foldlevel=99
 
 let g:pyflakes_use_quickfix=0
 
+augroup BufNewFileFromTemplate
+au!
+autocmd BufNewFile * silent! 0r $HOME/.vim/templates/template.%:e
+autocmd BufNewFile * normal! G"_dd1G
+autocmd BufNewFile * silent! match Todo /TODO/
+augroup BufNewFileFromTemplate"
+
 
 """""""""""""""""""""""""""""""
 " Fix mysterious bugs         "
