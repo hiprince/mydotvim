@@ -154,8 +154,10 @@ let g:tagbar_usearrows=1
 nnoremap <leader>t :TagbarToggle<CR>
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'gitv'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
+Bundle 'JSON.vim'
 Bundle 'EasyMotion'
 Bundle 'pydoc.vim'
 Bundle 'surround.vim'
@@ -218,6 +220,16 @@ au Syntax * RainbowParenthesesLoadBraces
 Bundle 'Conque-Shell'
 
 Bundle 'Glench/Vim-Jinja2-Syntax'
+
+Bundle 'DoxygenToolkit.vim'
+let g:DoxygenToolkit_briefTag_pre="@brief  "
+let g:DoxygenToolkit_paramTag_pre="@param  "
+let g:DoxygenToolkit_returnTag=   "@return FICUS_SUCC if no error"
+let g:DoxygenToolkit_blockHeader=""
+let g:DoxygenToolkit_blockFooter=""
+let g:DoxygenToolkit_authorName="Jiteng Hao"
+let g:DoxygenToolkit_licenseTag=""
+nnoremap <leader>dd :Dox<CR>
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
 """""""""""""""""""""""""""""""""""""""
@@ -314,6 +326,19 @@ autocmd BufNewFile * normal! G"_dd1G
 autocmd BufNewFile * silent! match Todo /TODO/
 augroup BufNewFileFromTemplate"
 
+"""""""""""""""""""""""""""""""
+" JSON.vim configuration      "
+"""""""""""""""""""""""""""""""
+au! BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd
+autocmd!
+autocmd FileType json set autoindent
+autocmd FileType json set formatoptions=tcq2l
+autocmd FileType json set textwidth=78 shiftwidth=2
+autocmd FileType json set softtabstop=2 tabstop=8
+autocmd FileType json set expandtab
+autocmd FileType json set foldmethod=syntax 
+augroup END
 
 """""""""""""""""""""""""""""""
 " Fix mysterious bugs         "
