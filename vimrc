@@ -23,6 +23,12 @@ nmap <leader>wr :set wrap!<cr>
 " change windows size
 nmap <leader>>> :20winc ><cr>
 nmap <leader><< :20winc <<cr>
+
+" change between cpp & h
+nnoremap <leader><leader>se :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+nnoremap <leader><leader>sv :vsp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+nnoremap <leader><leader>ss :sp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
 """""""""""""""""""""""""""""""""""
 " Indent and common issue related "
 """""""""""""""""""""""""""""""""""
