@@ -187,7 +187,7 @@ let g:ycm_min_num_of_chars_for_completion = 2
 " the following line may cause severe memory leak
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/jthao/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nmap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <leader>yd :YcmDiags<CR>
 
@@ -210,7 +210,8 @@ let g:BASH_Email        = 'phoenix.hao1@gmail.com'
 let g:BASH_Company      = '~~'
 
 " vim-airline
-Bundle "bling/vim-airline"
+Bundle "vim-airline/vim-airline"
+Bundle "vim-airline/vim-airline-themes"
 
 " colorschema
 Bundle 'https://github.com/flazz/vim-colorschemes.git'
