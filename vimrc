@@ -160,7 +160,6 @@ let g:tagbar_usearrows=1
 nnoremap <leader>t :TagbarToggle<CR>
 
 Bundle 'tpope/vim-fugitive'
-Bundle 'gitv'
 Bundle 'cpp.vim'
 Bundle 'c.vim'
 Bundle 'JSON.vim'
@@ -180,7 +179,6 @@ Bundle 'cscope.vim'
 
 Bundle 'HTML-AutoCloseTag'
 Bundle 'HTML5-Syntax-File'
-Bundle 'dbext.vim'
 Bundle "AutoClose"
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_min_num_of_chars_for_completion = 2
@@ -223,20 +221,11 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" conque shell simulator
-Bundle 'Conque-Shell'
+" ranger
+Bundle "francoiscabrol/ranger.vim"
+let g:ranger_map_keys = 0
+map <leader>f :Ranger<CR>
 
-Bundle 'Glench/Vim-Jinja2-Syntax'
-
-Bundle 'DoxygenToolkit.vim'
-let g:DoxygenToolkit_briefTag_pre="@brief  "
-let g:DoxygenToolkit_paramTag_pre="@param  "
-let g:DoxygenToolkit_returnTag=   "@return FICUS_SUCC if no error"
-let g:DoxygenToolkit_blockHeader=""
-let g:DoxygenToolkit_blockFooter=""
-let g:DoxygenToolkit_authorName="Jiteng Hao"
-let g:DoxygenToolkit_licenseTag=""
-nnoremap <leader>dd :Dox<CR>
 """""""""""""""""""""""""""""""""""""""
 " Insertion, deletion
 """""""""""""""""""""""""""""""""""""""
